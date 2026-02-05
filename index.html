@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Dhanshree 💖</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, #ff9acb, transparent 40%),
+    radial-gradient(circle at bottom right, #ff5fa2, transparent 40%),
+    linear-gradient(135deg, #120015, #000);
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Floating cute elements */
+.floater {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 12s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(110vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(-10vh) rotate(360deg);
+  }
+}
+
+/* Main container */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(255,105,180,0.6);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 35px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+button {
+  border: none;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, #ff7eb3, #ff4fa1);
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(255,95,162,0.8);
+  animation: pulse 1.6s infinite;
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+}
+
+#noBtn {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Freeze effect */
+.freeze {
+  filter: blur(2px) grayscale(0.6);
+  pointer-events: none;
+}
+
+/* Celebration */
+.celebration {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #000, #1a001f);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sunflowers {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.sunflower {
+  position: absolute;
+  font-size: 4.5rem;
+  transition: all 2.5s ease;
+}
+
+.left { left: 8%; }
+.right { right: 8%; }
+
+.together .left {
+  left: 40%;
+  transform: rotate(10deg);
+}
+.together .right {
+  right: 40%;
+  transform: rotate(-10deg);
+}
+
+.caption {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.final {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s;
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Flower rain */
+.petal {
+  position: absolute;
+  font-size: 1.6rem;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating cats, dogs, hearts -->
+<script>
+  const floaties = ["🐱","🐶","💖","🌸","🎀"];
+  for (let i = 0; i < 20; i++) {
+    const f = document.createElement("div");
+    f.className = "floater";
+    f.textContent = floaties[Math.floor(Math.random() * floaties.length)];
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.animationDuration = 10 + Math.random() * 10 + "s";
+    f.style.fontSize = (1.5 + Math.random() * 1.5) + "rem";
+    document.body.appendChild(f);
+  }
+</script>
+
+<div class="container" id="main">
+  <h1>Dhanshree, will you be my Valentine? 💕</h1>
+  <div class="subtitle">
+    I promise chaos, laughs, flowers, cats, dogs, and way too much affection 🌷🐾
+  </div>
+
+  <div class="buttons">
+    <button id="yesBtn">YES 💖</button>
+    <button id="noBtn">NO 🙃</button>
+  </div>
+</div>
+
+<div class="celebration" id="celebration">
+  <div class="sunflowers" id="sunflowers">
+    <div class="sunflower left">🌻</div>
+    <div class="sunflower right">🌻</div>
+  </div>
+
+  <div class="caption">Some things just face the same sun.</div>
+
+  <div class="final">
+    <p>Ata tu officially majhi Valentine aahes 🌷</p>
+    <strong>You just made my whole February 💖</strong>
+  </div>
+</div>
+
+<!-- Soft romantic piano (La La Land–vibe, NOT the actual song) -->
+<audio id="bgMusic" loop>
+  <!-- Replace src with your own soft piano mp3 if you want -->
+  <!-- <source src="piano-romantic.mp3" type="audio/mpeg"> -->
+</audio>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const main = document.getElementById("main");
+const celebration = document.getElementById("celebration");
+const sunflowers = document.getElementById("sunflowers");
+const music = document.getElementById("bgMusic");
+
+const noTexts = [
+  "Nice try 😏",
+  "Absolutely not.",
+  "Wrong choice detected",
+  "Ask again, but happier"
+];
+
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 80);
+  noBtn.style.position = "fixed";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+  noBtn.textContent = noTexts[Math.floor(Math.random() * noTexts.length)];
+});
+
+yesBtn.addEventListener("click", () => {
+  main.classList.add("freeze");
+  document.querySelector("h1").textContent =
+    "Processing happiest decision ever…";
+
+  // Try playing music (user interaction allows it)
+  music.volume = 0.4;
+  music.play().catch(()=>{});
+
+  setTimeout(() => {
+    main.style.display = "none";
+    celebration.style.display = "flex";
+    rainFlowers();
+    setTimeout(() => sunflowers.classList.add("together"), 800);
+  }, 1000);
+});
+
+function rainFlowers() {
+  const flowers = ["🌷","🌸","🌹","💮"];
+  for (let i = 0; i < 45; i++) {
+    const p = document.createElement("div");
+    p.className = "petal";
+    p.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = 3 + Math.random() * 3 + "s";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 6000);
+  }
+}
+</script>
+
+</body>
+</html>
