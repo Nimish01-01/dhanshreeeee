@@ -1,289 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhanshree 💖</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<title>Dhanshree 💖</title>
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, #ff9acb, transparent 40%),
+        radial-gradient(circle at bottom right, #ff5fa2, transparent 40%),
+        linear-gradient(135deg, #120015, #000);
+      color: #fff;
+      font-family: 'Quicksand', sans-serif;
+    }
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    /* Floating cute elements */
+    .floater {
+      position: fixed;
+      font-size: 2rem;
+      animation: float 12s linear infinite;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    @keyframes float {
+      from {
+        transform: translateY(110vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(-10vh) rotate(360deg);
+      }
+    }
 
-body {
-  margin: 0;
-  height: 100vh;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at top left, #ff9acb, transparent 40%),
-    radial-gradient(circle at bottom right, #ff5fa2, transparent 40%),
-    linear-gradient(135deg, #120015, #000);
-  color: #fff;
-  font-family: 'Quicksand', sans-serif;
-}
+    /* Main container */
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
 
-/* Floating cute elements */
-.floater {
-  position: absolute;
-  font-size: 2rem;
-  animation: float 12s linear infinite;
-  opacity: 0.7;
-}
+    #imageDisplay {
+      border-radius: 15px;
+      max-width: 90vw;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+      border: 3px solid rgba(255, 105, 180, 0.3);
+      margin-bottom: 20px;
+    }
 
-@keyframes float {
-  from {
-    transform: translateY(110vh) rotate(0deg);
-  }
-  to {
-    transform: translateY(-10vh) rotate(360deg);
-  }
-}
+    #valentineQuestion {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin: 20px 0;
+      text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+      color: #ff69b4;
+      line-height: 1.3;
+    }
 
-/* Main container */
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
+    .message-container {
+      margin-top: 20px;
+      padding: 0 20px;
+      max-width: 600px;
+    }
 
-h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 3rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 20px rgba(255,105,180,0.6);
-}
+    .marathi-line {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: #ffb3d9;
+      margin: 15px 0;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(255, 182, 217, 0.5);
+    }
 
-.subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 35px;
-}
+    .love-message {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: #fff;
+      margin-top: 15px;
+      font-weight: 500;
+    }
 
-/* Buttons */
-.buttons {
-  display: flex;
-  gap: 30px;
-  position: relative;
-}
+    /* Buttons */
+    #responseButtons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      padding-top: 30px;
+      align-items: center;
+      justify-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
 
-button {
-  border: none;
-  padding: 16px 36px;
-  border-radius: 999px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    button {
+      border: none;
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'Quicksand', sans-serif;
+      transition: all 0.2s ease;
+    }
 
-#yesBtn {
-  background: linear-gradient(135deg, #ff7eb3, #ff4fa1);
-  color: #000;
-  font-weight: 600;
-  box-shadow: 0 0 25px rgba(255,95,162,0.8);
-  animation: pulse 1.6s infinite;
-}
+    #yesButton {
+      background: linear-gradient(135deg, #ff7eb3, #ff4fa1);
+      color: #000;
+      box-shadow: 0 0 25px rgba(255, 95, 162, 0.8);
+      animation: bounce2 2s ease infinite;
+      min-height: 48px;
+      min-width: 80px;
+      max-height: 200px;
+      max-width: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-#yesBtn:hover {
-  transform: scale(1.1);
-}
+    #yesButton:hover {
+      background: linear-gradient(135deg, #ff8fc4, #ff60b2);
+    }
 
-#noBtn {
-  background: #1a1a1a;
-  color: #fff;
-}
+    @keyframes bounce2 {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-15px);
+      }
+      60% {
+        transform: translateY(-8px);
+      }
+    }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
+    #noButton {
+      background: #1a1a1a;
+      color: #fff;
+      min-height: 48px;
+      min-width: 80px;
+      border: 2px solid #ff4fa1;
+      position: relative;
+      z-index: 100;
+    }
 
-/* Freeze effect */
-.freeze {
-  filter: blur(2px) grayscale(0.6);
-  pointer-events: none;
-}
+    #noButton:hover {
+      background: #2a2a2a;
+    }
 
-/* Celebration */
-.celebration {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #000, #1a001f);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    /* Responsive */
+    @media (max-width: 768px) {
+      #imageDisplay {
+        max-height: 250px;
+      }
+      
+      button {
+        padding: 14px 28px;
+        font-size: 1.1rem;
+      }
 
-.sunflowers {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  margin-bottom: 20px;
-}
+      #responseButtons {
+        gap: 30px;
+        padding-top: 20px;
+        max-width: 90%;
+      }
 
-.sunflower {
-  position: absolute;
-  font-size: 4.5rem;
-  transition: all 2.5s ease;
-}
+      #yesButton {
+        max-height: 160px;
+        max-width: 200px;
+      }
+    }
 
-.left { left: 8%; }
-.right { right: 8%; }
+    @media (max-width: 480px) {
+      #imageDisplay {
+        max-height: 200px;
+      }
 
-.together .left {
-  left: 40%;
-  transform: rotate(10deg);
-}
-.together .right {
-  right: 40%;
-  transform: rotate(-10deg);
-}
+      .floater {
+        font-size: 1.5rem;
+      }
 
-.caption {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
+      #responseButtons {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
 
-.final {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-  animation-delay: 2s;
-  font-size: 1.2rem;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* Flower rain */
-.petal {
-  position: absolute;
-  font-size: 1.6rem;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-</style>
+      #yesButton {
+        max-height: 140px;
+        max-width: 160px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Floating elements -->
+  <script>
+    const floaties = ["🐱", "🐶", "💖", "🌸", "🎀", "✨", "💕"];
+    for (let i = 0; i < 15; i++) {
+      const f = document.createElement("div");
+      f.className = "floater";
+      f.textContent = floaties[Math.floor(Math.random() * floaties.length)];
+      f.style.left = Math.random() * 100 + "vw";
+      f.style.animationDuration = 10 + Math.random() * 10 + "s";
+      f.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(f);
+    }
+  </script>
 
-<!-- Floating cats, dogs, hearts -->
-<script>
-  const floaties = ["🐱","🐶","💖","🌸","🎀"];
-  for (let i = 0; i < 20; i++) {
-    const f = document.createElement("div");
-    f.className = "floater";
-    f.textContent = floaties[Math.floor(Math.random() * floaties.length)];
-    f.style.left = Math.random() * 100 + "vw";
-    f.style.animationDuration = 10 + Math.random() * 10 + "s";
-    f.style.fontSize = (1.5 + Math.random() * 1.5) + "rem";
-    document.body.appendChild(f);
-  }
-</script>
+  <!-- Main Content -->
+  <div class="container">
+    <img id="imageDisplay" src="./images/image1.gif" alt="Cute valentine gif" />
+    
+    <h1 id="valentineQuestion">Dhanshree, will you be my Valentine? 💕</h1>
 
-<div class="container" id="main">
-  <h1>Dhanshree, will you be my Valentine? 💕</h1>
-  <div class="subtitle">
-    I promise chaos, laughs, flowers, cats, dogs, and way too much affection 🌷🐾
+    <div class="message-container" id="messageContainer" style="display: none;">
+      <div class="marathi-line">Ata tu officially majhi Valentine aahes 🌷</div>
+      <div class="love-message">Dhanshree, you just made my whole February 💖✨</div>
+    </div>
+
+    <div id="responseButtons">
+      <button id="yesButton">YES 💖</button>
+      <button id="noButton">NO 🙃</button>
+    </div>
   </div>
 
-  <div class="buttons">
-    <button id="yesBtn">YES 💖</button>
-    <button id="noBtn">NO 🙃</button>
-  </div>
-</div>
+  <script type="module">
+    import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+    
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const imageDisplay = document.getElementById('imageDisplay');
+    const valentineQuestion = document.getElementById('valentineQuestion');
+    const responseButtons = document.getElementById('responseButtons');
+    const messageContainer = document.getElementById('messageContainer');
+    
+    let noClickCount = 0;
+    let buttonHeight = 48;
+    let buttonWidth = 80;
+    let fontSize = 20;
+    let isDodging = false;
+    
+    // Max limits for YES button growth
+    const MAX_HEIGHT = 200;
+    const MAX_WIDTH = 250;
+    const MAX_FONT_SIZE = 60;
+    
+    const imagePaths = [
+      "./images/image1.gif",
+      "./images/image2.gif",
+      "./images/image3.gif",
+      "./images/image4.gif",
+      "./images/image5.gif",
+      "./images/image6.gif",
+      "./images/image7.gif"
+    ];
+    
+    const noTexts = [
+      "No",
+      "Are you sure? 🥺",
+      "Pookie please 🥹",
+      "Don't do this to me 😢",
+      "You're breaking my heart 💔",
+      "I'm gonna cry... 😭"
+    ];
+    
+    const dodgeTexts = [
+      "Nice try 😏",
+      "Nope! 😤",
+      "Catch me! 🏃",
+      "Not happening! 🙃"
+    ];
 
-<div class="celebration" id="celebration">
-  <div class="sunflowers" id="sunflowers">
-    <div class="sunflower left">🌻</div>
-    <div class="sunflower right">🌻</div>
-  </div>
+    // Handle NO button clicks (first 5 times)
+    noButton.addEventListener('click', function(e) {
+      if (noClickCount < 5) {
+        noClickCount++;
+        
+        // Change image
+        if (noClickCount < imagePaths.length) {
+          imageDisplay.src = imagePaths[noClickCount];
+        }
+        
+        // Grow YES button gradually with limits
+        buttonHeight = Math.min(buttonHeight + 25, MAX_HEIGHT);
+        buttonWidth = Math.min(buttonWidth + 25, MAX_WIDTH);
+        fontSize = Math.min(fontSize + 10, MAX_FONT_SIZE);
+        
+        yesButton.style.height = `${buttonHeight}px`;
+        yesButton.style.width = `${buttonWidth}px`;
+        yesButton.style.fontSize = `${fontSize}px`;
+        
+        // Change NO button text
+        noButton.textContent = noTexts[noClickCount];
+        
+        // After 5th click, enable dodging
+        if (noClickCount === 5) {
+          isDodging = true;
+          noButton.style.position = 'fixed';
+          noButton.style.zIndex = '1000';
+        }
+      }
+    });
 
-  <div class="caption">Some things just face the same sun.</div>
+    // Dodging behavior (after 5 clicks)
+    noButton.addEventListener('mouseenter', function() {
+      if (isDodging) {
+        const maxX = window.innerWidth - noButton.offsetWidth - 20;
+        const maxY = window.innerHeight - noButton.offsetHeight - 20;
+        const x = Math.max(20, Math.random() * maxX);
+        const y = Math.max(20, Math.random() * maxY);
+        
+        noButton.style.left = x + "px";
+        noButton.style.top = y + "px";
+        noButton.textContent = dodgeTexts[Math.floor(Math.random() * dodgeTexts.length)];
+      }
+    });
 
-  <div class="final">
-    <p>Ata tu officially majhi Valentine aahes 🌷</p>
-    <strong>You just made my whole February 💖</strong>
-  </div>
-</div>
+    // Handle YES button click
+    yesButton.addEventListener('click', () => {
+      // Change to happy image
+      imageDisplay.src = './images/image7.gif';
+      
+      // Update text
+      valentineQuestion.textContent = "Yayyy!! :3";
+      
+      // Show message
+      messageContainer.style.display = 'block';
+      
+      // Hide buttons
+      responseButtons.style.display = 'none';
+      
+      // Trigger confetti
+      const duration = 4000;
+      const end = Date.now() + duration;
+      
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: ['#ff69b4', '#ff1493', '#ffb3d9', '#ff6eb4', '#ffc0cb']
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: ['#ff69b4', '#ff1493', '#ffb3d9', '#ff6eb4', '#ffc0cb']
+        });
 
-<!-- Soft romantic piano (La La Land–vibe, NOT the actual song) -->
-<audio id="bgMusic" loop>
-  <!-- Replace src with your own soft piano mp3 if you want -->
-  <!-- <source src="piano-romantic.mp3" type="audio/mpeg"> -->
-</audio>
-
-<script>
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const main = document.getElementById("main");
-const celebration = document.getElementById("celebration");
-const sunflowers = document.getElementById("sunflowers");
-const music = document.getElementById("bgMusic");
-
-const noTexts = [
-  "Nice try 😏",
-  "Absolutely not.",
-  "Wrong choice detected",
-  "Ask again, but happier"
-];
-
-noBtn.addEventListener("mouseenter", () => {
-  const x = Math.random() * (window.innerWidth - 120);
-  const y = Math.random() * (window.innerHeight - 80);
-  noBtn.style.position = "fixed";
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
-  noBtn.textContent = noTexts[Math.floor(Math.random() * noTexts.length)];
-});
-
-yesBtn.addEventListener("click", () => {
-  main.classList.add("freeze");
-  document.querySelector("h1").textContent =
-    "Processing happiest decision ever…";
-
-  // Try playing music (user interaction allows it)
-  music.volume = 0.4;
-  music.play().catch(()=>{});
-
-  setTimeout(() => {
-    main.style.display = "none";
-    celebration.style.display = "flex";
-    rainFlowers();
-    setTimeout(() => sunflowers.classList.add("together"), 800);
-  }, 1000);
-});
-
-function rainFlowers() {
-  const flowers = ["🌷","🌸","🌹","💮"];
-  for (let i = 0; i < 45; i++) {
-    const p = document.createElement("div");
-    p.className = "petal";
-    p.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.animationDuration = 3 + Math.random() * 3 + "s";
-    document.body.appendChild(p);
-    setTimeout(() => p.remove(), 6000);
-  }
-}
-</script>
-
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+    });
+  </script>
 </body>
 </html>
